@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¿Serías mi San Valentín?</title>
+    <style>
+        body, .background1, .background2 {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            height: 100vh; /* Asegura que el body ocupe toda la altura de la ventana */
+            margin: 0; /* Elimina cualquier margen por defecto */
+            transition: background-image 0.5s ease-in-out;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center center;
+        }
+        .background1 {
+            background-image: url('images/foto1.jpg');
+        }
+        .background2 {
+            background-image: url('images/foto2.jpg');
+        }
+        h1 {
+            color: #0099FF; /* Azul llamativo y brillante */
+        }
+        #noButton, #yesButton {
+            margin: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            background-color: #f44336; /* Rojo para el botón 'No' */
+            color: white; /* Texto blanco para los botones para contraste */
+        }
+        #yesButton {
+            background-color: green;
+        }
+    </style>
+</head>
+<body class="background1">
+    <h1>¿Quieres ser mi San Valentín?</h1>
+    <button id="yesButton" onclick="window.location='yes.html'">Sí</button>
+    <button id="noButton">No</button>
+    <script>
+        const noButton = document.getElementById('noButton');
+        noButton.addEventListener('mouseover', () => {
+            const newX = Math.random() * window.innerWidth;
+            const newY = Math.random() * window.innerHeight;
+            noButton.style.position = 'absolute';
+            noButton.style.left = `${newX}px`;
+            noButton.style.top = `${newY}px`;
+            document.body.classList.toggle('background1');
+            document.body.classList.toggle('background2');
+        });
+    </script>
+</body>
+</html>
